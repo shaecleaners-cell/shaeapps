@@ -1,0 +1,9 @@
+{
+  "name":"Shae Cleaners",
+  "short_name":"Shae Cleaners",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#f6f8fa",
+  "theme_color":"#16a34a",
+  "icons":[]
+}

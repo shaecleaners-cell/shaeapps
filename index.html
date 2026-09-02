@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#16a34a">
+  <meta name="description" content="Shae Cleaners - Cleaning Marketplace">
+  <title>Shae Cleaners</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top-header">
+      <div class="brand">
+        <div class="brand-logo">SC</div>
+        <div>
+          <h1>Shae <span>Cleaners</span></h1>
+          <p>Cleaning Marketplace</p>
+        </div>
+      </div>
+      <button class="icon-btn" onclick="showPage('notifikasi')" aria-label="Notifikasi">
+        <i class="fa-regular fa-bell"></i><b></b>
+      </button>
+    </header>
+
+    <main id="main">
+      <section id="home" class="page active">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Cari layanan cleaning..." oninput="filterServices(this.value)">
+        </div>
+
+        <div class="hero">
+          <div class="hero-copy">
+            <small>PROMO SPESIAL</small>
+            <h2>Sofa Bersih,<br>Rumah Lebih Nyaman</h2>
+            <p>Pesan cleaning sekarang dan dapatkan harga terbaik.</p>
+            <button class="primary-btn" onclick="startOrder('Sofa')">Pesan Sekarang <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="hero-art">🛋️<span>✨</span></div>
+        </div>
+        <div class="dots"><i class="on"></i><i></i></div>
+
+        <div class="section-head">
+          <div><h2>Kategori Layanan</h2><p>Pilih kebutuhan cleaning Anda</p></div>
+          <button onclick="showPage('layanan')">Lihat Semua <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div id="serviceGrid" class="service-grid"></div>
+
+        <div class="section-head popular-head">
+          <div><h2>Layanan Populer</h2><p>Paling sering dipesan pelanggan</p></div>
+          <button onclick="showPage('layanan')">Semua <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div id="popularList" class="popular-list"></div>
+
+        <section class="why">
+          <div class="section-title">
+            <h2>Kenapa Shae Cleaners?</h2>
+            <p>Cleaning lebih mudah dan praktis</p>
+          </div>
+          <div class="why-grid">
+            <article><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><h3>Booking Cepat</h3><p>Pesan layanan hanya dalam beberapa langkah.</p></article>
+            <article><div class="why-icon"><i class="fa-brands fa-whatsapp"></i></div><h3>Langsung WhatsApp</h3><p>Order langsung diteruskan ke WhatsApp.</p></article>
+            <article><div class="why-icon"><i class="fa-solid fa-receipt"></i></div><h3>Invoice Otomatis</h3><p>Pesanan mendapatkan nomor invoice otomatis.</p></article>
+            <article><div class="why-icon"><i class="fa-solid fa-shield-heart"></i></div><h3>Profesional</h3><p>Layanan cleaning untuk rumah dan kendaraan.</p></article>
+          </div>
+        </section>
+      </section>
+
+      <section id="layanan" class="page">
+        <div class="page-title"><h2>Semua Layanan</h2><p>Pilih layanan yang Anda butuhkan</p></div>
+        <div id="allServices" class="service-list"></div>
+      </section>
+
+      <section id="pesanan" class="page">
+        <div class="page-title"><h2>Pesanan Saya</h2><p>Riwayat booking Anda</p></div>
+        <div id="ordersList"></div>
+      </section>
+
+      <section id="invoice" class="page">
+        <div class="page-title"><h2>Invoice</h2><p>Invoice dan detail pembayaran</p></div>
+        <div id="invoiceContent"></div>
+      </section>
+
+      <section id="akun" class="page">
+        <div class="profile-card">
+          <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+          <div><h2 id="profileName">Pelanggan</h2><p id="profilePhone">Belum login</p></div>
+          <button class="edit-btn" onclick="editProfile()"><i class="fa-solid fa-pen"></i></button>
+        </div>
+        <div class="account-menu">
+          <button onclick="showToast('Fitur alamat siap digunakan')"><i class="fa-solid fa-location-dot"></i><span>Alamat Saya</span><i class="fa-solid fa-chevron-right"></i></button>
+          <button onclick="showToast('Fitur bantuan siap digunakan')"><i class="fa-regular fa-circle-question"></i><span>Bantuan</span><i class="fa-solid fa-chevron-right"></i></button>
+          <button onclick="showToast('Pengaturan siap digunakan')"><i class="fa-solid fa-gear"></i><span>Pengaturan</span><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+      <section id="notifikasi" class="page">
+        <div class="page-title"><h2>Notifikasi</h2><p>Informasi terbaru untuk Anda</p></div>
+        <div class="empty-card"><div>🔔</div><h3>Belum ada notifikasi</h3><p>Notifikasi pesanan akan muncul di sini.</p></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-page="home" class="nav-item active" onclick="showPage('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+      <button data-page="layanan" class="nav-item" onclick="showPage('layanan')"><i class="fa-solid fa-layer-group"></i><span>Layanan</span></button>
+      <button data-page="pesanan" class="nav-item order-nav" onclick="showPage('pesanan')"><div><i class="fa-solid fa-bag-shopping"></i></div><span>Pesanan</span></button>
+      <button data-page="invoice" class="nav-item" onclick="showPage('invoice')"><i class="fa-solid fa-file-invoice"></i><span>Invoice</span></button>
+      <button data-page="akun" class="nav-item" onclick="showPage('akun')"><i class="fa-regular fa-user"></i><span>Akun</span></button>
+    </nav>
+  </div>
+
+  <div id="orderModal" class="modal hidden">
+    <div class="sheet">
+      <div class="sheet-head"><div><h2>Booking Cleaning</h2><p>Isi data dalam beberapa langkah</p></div><button onclick="closeOrder()"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div id="step1" class="order-step"></div>
+      <div id="step2" class="order-step hidden"></div>
+      <div id="step3" class="order-step hidden"></div>
+      <div id="step4" class="order-step hidden"></div>
+      <div class="step-actions">
+        <button id="backBtn" class="secondary-btn" onclick="prevStep()">Kembali</button>
+        <button id="nextBtn" class="primary-btn" onclick="nextStep()">Lanjut</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="firebase.js"></script>
+  <script src="app.js"></script>
+  <script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}</script>
+</body>
+</html>

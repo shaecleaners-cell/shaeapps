@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#16a34a">
+<title>Admin - Shae Cleaners</title>
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="admin-app">
+  <header>
+    <div>
+      <h1>Shae <span>Cleaners</span></h1>
+      <p>Panel Admin • Order Cleaning</p>
+    </div>
+    <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> ADMIN</div>
+  </header>
+
+  <section class="stats">
+    <div><b id="totalOrders">0</b><span>Total Order</span></div>
+    <div><b id="waitingOrders">0</b><span>Menunggu</span></div>
+    <div><b id="confirmedOrders">0</b><span>Dikonfirmasi</span></div>
+    <div><b id="doneOrders">0</b><span>Selesai</span></div>
+  </section>
+
+  <div class="toolbar">
+    <h2>Pesanan Terbaru</h2>
+    <select id="filterStatus">
+      <option value="">Semua Status</option>
+      <option>Menunggu</option>
+      <option>Dikonfirmasi</option>
+      <option>Diproses</option>
+      <option>Selesai</option>
+    </select>
+  </div>
+
+  <div id="orders"><div class="loading">Menghubungkan ke Firebase...</div></div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
