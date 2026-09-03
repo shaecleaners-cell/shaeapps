@@ -9,49 +9,49 @@
 const SERVICES = [
   {
     name: "Sofa",
-    icon: "icon/sofa.png",
+    icon: "assets/icons/sofa.png",
     desc: "Sofa standard, lepasan & set",
     prices: [60000, 75000, 75000, 250000, 300000, 350000]
   },
   {
     name: "Kasur",
-    icon: "icon/kasur.png",
+    icon: "assets/icons/kasur.png",
     desc: "Springbed mini sampai super king",
     prices: [150000, 180000, 270000, 290000, 310000]
   },
   {
     name: "Jok Mobil",
-    icon: "icon/jokmobil.png",
+    icon: "assets/icons/jokmobil.png",
     desc: "Jok saja atau paket interior",
     prices: [250000, 400000, 350000]
   },
   {
     name: "Karpet",
-    icon: "icon/karpet.png",
+    icon: "assets/icons/karpet.png",
     desc: "Cuci karpet per m²",
     prices: [13000]
   },
   {
     name: "Kursi",
-    icon: "icon/kursi.png",
+    icon: "assets/icons/kursi.png",
     desc: "Kursi makan & kursi kantor",
     prices: [30000, 35000, 30000, 40000]
   },
   {
     name: "Gorden",
-    icon: "icon/gorden.png",
+    icon: "assets/icons/gorden.png",
     desc: "Cuci gorden rumah",
     prices: [50000]
   },
   {
     name: "AC",
-    icon: "icon/ac.png",
+    icon: "assets/icons/ac.png",
     desc: "Cleaning AC rumah",
     prices: [75000]
   },
   {
     name: "Home Cleaning",
-    icon: "icon/homecleaning.png",
+    icon: "assets/icons/homecleaning.png",
     desc: "Cleaning rumah menyeluruh",
     prices: [150000]
   }
