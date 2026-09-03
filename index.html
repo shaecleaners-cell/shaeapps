@@ -7,14 +7,16 @@
   <meta name="description" content="Shae Cleaners - Cleaning Marketplace">
   <title>Shae Cleaners</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
   <div class="app">
     <header class="top-header">
       <div class="brand">
-        <div class="brand-logo">SC</div>
+        <div class="brand-logo">
+  <img src="logo.png" alt="Shae Cleaners" class="logo-img">
+</div>
         <div>
           <h1>Shae <span>Cleaners</span></h1>
           <p>Cleaning Marketplace</p>
@@ -24,25 +26,38 @@
         <i class="fa-regular fa-bell"></i><b></b>
       </button>
     </header>
-
     <main id="main">
       <section id="home" class="page active">
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input id="searchInput" type="search" placeholder="Cari layanan cleaning..." oninput="filterServices(this.value)">
         </div>
+       <section class="hero-slider">
+  <div class="hero-track">
 
-        <div class="hero">
-          <div class="hero-copy">
-            <small>PROMO SPESIAL</small>
-            <h2>Sofa Bersih,<br>Rumah Lebih Nyaman</h2>
-            <p>Pesan cleaning sekarang dan dapatkan harga terbaik.</p>
-            <button class="primary-btn" onclick="startOrder('Sofa')">Pesan Sekarang <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-          <div class="hero-art">🛋️<span>✨</span></div>
-        </div>
-        <div class="dots"><i class="on"></i><i></i></div>
+    <div class="hero-slide">
+      <img src="banner1.jpg" alt="Promo Shae Cleaners">
+    </div>
 
+    <div class="hero-slide">
+      <img src="banner2.jpg" alt="Promo Cuci Sofa">
+    </div>
+
+    <div class="hero-slide">
+      <img src="banner3.jpg" alt="Promo Cuci Kasur">
+    </div>
+
+  </div>
+
+  <button class="slider-btn prev" onclick="prevSlide()">‹</button>
+  <button class="slider-btn next" onclick="nextSlide()">›</button>
+
+  <div class="slider-dots">
+    <span onclick="goSlide(0)" class="active"></span>
+    <span onclick="goSlide(1)"></span>
+    <span onclick="goSlide(2)"></span>
+  </div>
+</section>
         <div class="section-head">
           <div><h2>Kategori Layanan</h2><p>Pilih kebutuhan cleaning Anda</p></div>
           <button onclick="showPage('layanan')">Lihat Semua <i class="fa-solid fa-chevron-right"></i></button>
@@ -99,7 +114,7 @@
 
       <section id="notifikasi" class="page">
         <div class="page-title"><h2>Notifikasi</h2><p>Informasi terbaru untuk Anda</p></div>
-        <div class="empty-card"><div>🔔</div><h3>Belum ada notifikasi</h3><p>Notifikasi pesanan akan muncul di sini.</p></div>
+        <div class="empty-card"><div>ðŸ””</div><h3>Belum ada notifikasi</h3><p>Notifikasi pesanan akan muncul di sini.</p></div>
       </section>
     </main>
 
@@ -128,8 +143,6 @@
   </div>
 
   <div id="toast" class="toast"></div>
-  <script type="module" src="firebase.js"></script>
   <script src="app.js"></script>
-  <script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}</script>
 </body>
 </html>
