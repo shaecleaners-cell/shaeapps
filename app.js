@@ -1450,7 +1450,7 @@ function openWhatsApp(i) {
 
 
   const phone =
-    "6281234567890";
+    "6283813138221";
   // GANTI dengan nomor WhatsApp Shae Cleaners
 
 
